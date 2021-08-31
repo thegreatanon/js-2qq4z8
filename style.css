@@ -138,12 +138,12 @@ body {
 
 .list-layout .list-layout__list {
   flex-grow: 3;
-  width: 350px;
+  /* width: 350px; */
 }
 
 .list-layout .list-layout__detail {
   flex-grow: 2;
-  width: 450px;
+  /* width: 450px; */
   transition: all 0.5s ease-in-out;
   overflow-y: hidden;
 }
@@ -179,6 +179,28 @@ body {
 }
 
 .detail-list-layout {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.detail-list-layout .detail-list-layout__filters {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 20rem;
+  background-color: white;
+}
+
+.detail-list-layout .detail-list-layout__list {
+  flex: 1;
+  background-color: white;
+}
+
+.detail-list-layout .detail-list-layout__detail {
+  flex: 1;
   background-color: white;
 }
 

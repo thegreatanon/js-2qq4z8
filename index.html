@@ -437,37 +437,45 @@
 
               <!-- <div class="sh-item-detail-content-template"> -->
               <div class="detail-list-layout">
-                <div class="sh-table-master-details-content-template ">
-                  <section class="sh-table-master-details-content-template__master-content page-subsection-layout">
-                    <div class="sh-template-stack">
-                      <div class="sh-template-stack__item">
-                        <div class="sh-form-row-with-action">
-                          <div class="sh-form-row-with-action__inputs">
-                            <div class="sh-form-group sh-form-row-with-action__inputs__item">
-                              <div class="sh-input-field-with-action -sh-joined-action">
-                                <div class="sh-input-field-with-action__input">
-                                  <input type="text" placeholder="Geef zoekterm in..." class="sh-input-field sh-input-field-with-action__input">
-                                </div>
-                                <button type="button" class="sh-pure-square-icon-button--inverted sh-input-field-with-action__action" aria-label="search">
+                <!-- <div class="sh-table-master-details-content-template -sh-show-details"> -->
+                <section class="detail-list-layout__list">
+                  <!-- <div class="sh-template-stack"> -->
+                  <div class="detail-list-layout__list__head">
+                    <div class="sh-form-row-with-action">
+                      <div class="sh-form-row-with-action__inputs">
+                        <div class="sh-form-group sh-form-row-with-action__inputs__item">
+                          <div class="sh-input-field-with-action -sh-joined-action">
+                            <div class="sh-input-field-with-action__input">
+                              <input type="text" placeholder="Geef zoekterm in..." class="sh-input-field sh-input-field-with-action__input">
+                            </div>
+                            <button type="button" class="sh-pure-square-icon-button--inverted sh-input-field-with-action__action" aria-label="search">
                                 <svg class="sh-icon sh-icon-button__icon" aria-hidden="true"><use xlink:href="#sh-icon-search"/></svg>
                             </button>
-                              </div>
-                            </div>
                           </div>
-                          <div class="sh-form-row-with-action__actions">
-                            <button type="submit" class="sh-button--light sh-icon-button sh-form-row-with-action__actions__item -sh-button-spacing">
+                        </div>
+                      </div>
+                      <div class="sh-form-row-with-action__actions">
+                        <button type="submit" class="sh-button--light sh-icon-button sh-form-row-with-action__actions__item -sh-button-spacing">
                              <svg class="sh-icon--small sh-icon-button__icon" aria-hidden="true"><use xlink:href="#sh-icon-filter"/></svg>
                              Filters
                          </button>
-                            <button type="submit" class="sh-button--light sh-icon-button sh-form-row-with-action__actions__item -sh-button-spacing">
+                        <button type="submit" class="sh-button--light sh-icon-button sh-form-row-with-action__actions__item -sh-button-spacing">
                             <svg class="sh-icon--small sh-icon-button__icon" aria-hidden="true"><use xlink:href="#sh-icon-binoculars"/></svg>
                               Uitgebreid zoeken
                          </button>
-                          </div>
-                        </div>
-                        <div class="sh-filter-bar">
-                          <!---->
-                        </div>
+                      </div>
+                    </div>
+                    <div class="sh-filter-bar">
+                      <!---->
+                    </div>
+
+                  </div>
+                  <div class="detail-list-layout__list__filters">
+                    filters;
+                  </div>
+                  <div class="detail-list-layout__list__content">
+                    <div class="sh-template-stack">
+                      <div class="sh-template-stack__item">
                         <section class="sh-action-bar">
                           <div class="-sh-condense sh-action-bar__group">
                             <div class="sh-action-bar__group__item">
@@ -496,8 +504,6 @@
                             </div>
                           </div>
                         </section>
-                      </div>
-                      <div class="sh-template-stack__item">
                         <div class="sh-card-table-wrapper">
                           <table class="sh-card-table">
                             <thead>
@@ -545,125 +551,13 @@
                         </section>
                       </div>
                     </div>
-                  </section>
-                  <section class="sh-table-master-details-content-template__details-content sh-clear-padding-vertical">
-                    <div class="sh-table-master-details-content-template__details-content__header">
-                      <div class="sh-page-header -sh-has-divider">
-                        <header class="sh-page-header__head--no-context-items">
-                          <h3 class="sh-page-title--section">Item Title</h3>
-                        </header>
-                        <div class="sh-page-header__actions">
-                          <div class="sh-action-group -sh-condense">
-                            <button type="button" class="sh-button--ghost sh-icon-button sh-action-group__item">
-                                      <svg class="sh-icon--small sh-icon-button__icon" aria-hidden="true"><use xlink:href="#sh-icon-expand"></use></svg>
-                                      Show more
-                                  </button>
-                            <button class="sh-pure-icon-button sh-action-group__item">
-                                      <svg class="sh-icon sh-icon-button__icon" aria-hidden="true"><use xlink:href="#sh-icon-close"></use></svg>
-                                  </button>
-                          </div>
-                        </div>
-                      </div>
+                  </div>
 
-                      <nav class="sh-tab-navigation--small">
-                        <a href="#description" class="sh-tab-navigation__item -sh-is-active" aria-current="location">
-                          Beschrijving </a>
-                        <a href="#location" class="sh-tab-navigation__item"> Locatie </a>
-                        <a href="#recording" class="sh-tab-navigation__item"> Opname </a>
-                        <a href="#permissions" class="sh-tab-navigation__item"> Rechten en privacy </a>
-                        <a href="#technical" class="sh-tab-navigation__item"> Technische gegevens </a>
-                      </nav>
-                    </div>
-                    <h4>Beschrijving</h4>
-                    <p>
-                      Dynamic websites are generated on the fly and use server-side technology to generate webpages.
-                      They typically extract their content from one or more back-end databases: some are database
-                      queries across a relational database to query a catalogue or to summarise numeric information,
-                      others may use a document database such as MongoDB or NoSQL to store larger units of content, such
-                      as blog posts or wiki articles.
-                    </p>
-                    <h4>Locatie</h4>
-                    <p>
-                      In the design process, dynamic pages are often mocked-up or wireframed using static pages. The
-                      skillset needed to develop dynamic web pages is much broader than for a static pages, involving
-                      server-side and database coding as well as client-side interface design. Even medium-sized dynamic
-                      projects are thus almost always a team effort.
-                    </p>
-                    <h4>Opname</h4>
-                    <p>
-                      When dynamic web pages first developed, they were typically coded directly in languages such as
-                      Perl, PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a server-side
-                      page resembled the structure of the completed client-side page and data was inserted into places
-                      defined by tags. This was a quicker means of development than coding in a purely procedural coding
-                      language such as Perl.
-                    </p>
-                    <h4>Rechten en privacy</h4>
-                    <p>
-                      Dynamic websites are generated on the fly and use server-side technology to generate webpages.
-                      They typically extract their content from one or more back-end databases: some are database
-                      queries across a relational database to query a catalogue or to summarise numeric information,
-                      others may use a document database such as MongoDB or NoSQL to store larger units of content, such
-                      as blog posts or wiki articles.
-                    </p>
-                    <h4>Technische gegevens</h4>
-                    <p>
-                      In the design process, dynamic pages are often mocked-up or wireframed using static pages. The
-                      skillset needed to develop dynamic web pages is much broader than for a static pages, involving
-                      server-side and database coding as well as client-side interface design. Even medium-sized dynamic
-                      projects are thus almost always a team effort.
-                    </p>
-                    <h4>Beschrijving</h4>
-                    <p>
-                      Dynamic websites are generated on the fly and use server-side technology to generate webpages.
-                      They typically extract their content from one or more back-end databases: some are database
-                      queries across a relational database to query a catalogue or to summarise numeric information,
-                      others may use a document database such as MongoDB or NoSQL to store larger units of content, such
-                      as blog posts or wiki articles.
-                    </p>
-                    <h4>Locatie</h4>
-                    <p>
-                      In the design process, dynamic pages are often mocked-up or wireframed using static pages. The
-                      skillset needed to develop dynamic web pages is much broader than for a static pages, involving
-                      server-side and database coding as well as client-side interface design. Even medium-sized dynamic
-                      projects are thus almost always a team effort.
-                    </p>
-                    <h4>Opname</h4>
-                    <p>
-                      When dynamic web pages first developed, they were typically coded directly in languages such as
-                      Perl, PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a server-side
-                      page resembled the structure of the completed client-side page and data was inserted into places
-                      defined by tags. This was a quicker means of development than coding in a purely procedural coding
-                      language such as Perl.
-                    </p>
-                    <h4>Rechten en privacy</h4>
-                    <p>
-                      Dynamic websites are generated on the fly and use server-side technology to generate webpages.
-                      They typically extract their content from one or more back-end databases: some are database
-                      queries across a relational database to query a catalogue or to summarise numeric information,
-                      others may use a document database such as MongoDB or NoSQL to store larger units of content, such
-                      as blog posts or wiki articles.
-                    </p>
-                    <h4>Technische gegevens</h4>
-                    <p>
-                      In the design process, dynamic pages are often mocked-up or wireframed using static pages. The
-                      skillset needed to develop dynamic web pages is much broader than for a static pages, involving
-                      server-side and database coding as well as client-side interface design. Even medium-sized dynamic
-                      projects are thus almost always a team effort.
-                    </p>
-
-                    <div class="sh-table-master-details-content-template__details-content__actions">
-                      <div class="sh-action-bar">
-                        <div class="sh-action-bar__group">
-                          <div class="sh-action-bar__group__item">
-                            <div class="sh-action-group -sh-condense">
-                              <button type="button" class="sh-button sh-action-group__item">Bewerken</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                </div>
+                </section>
+                <section class="detail-list-layout__detail">
+                  testdata
+                </section>
+                <!-- </div> -->
               </div>
               <!-- </div> -->
 
