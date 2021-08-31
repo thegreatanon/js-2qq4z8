@@ -1,0 +1,692 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://dev.mediahaven.com/stylehaven/assets/css/mediahaven.min.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./script.js"></script>
+</head>
+
+<body>
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <symbol viewBox="0 0 32 32" id="sh-icon-add" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3C8.832 3 3 8.832 3 16s5.832 13 13 13 13-5.832 13-13S23.168 3 16 3zm0 2c6.087 0 11 4.913 11 11s-4.913 11-11 11S5 22.087 5 16 9.913 5 16 5zm-1 5v5h-5v2h5v5h2v-5h5v-2h-5v-5h-2z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-angle-down" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4.219 10.781L2.78 12.22l12.5 12.5.719.687.719-.687 12.5-12.5-1.438-1.438L16 22.562 4.219 10.783z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-angle-left" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19.031 4.281l-11 11-.687.719.687.719 11 11 1.438-1.438L10.187 16 20.47 5.719 19.03 4.28z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-angle-right" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12.969 4.281L11.53 5.72 21.812 16l-10.28 10.281 1.437 1.438 11-11 .687-.719-.687-.719-11-11z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-angle-up" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 6.594l-.719.687-12.5 12.5L4.22 21.22 16 9.437 27.781 21.22l1.438-1.438-12.5-12.5L16 6.594z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-archive" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M4 5v6h1v16h22V11h1V5zm2 2h20v2H6zm1 4h18v14H7zm5.813 2c-.551.05-.958.543-.907 1.094.051.55.543.957 1.094.906h6c.36.004.695-.184.879-.496a1.01 1.01 0 000-1.008c-.184-.312-.52-.5-.879-.496H12.812z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-arrow-down" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 4v20.063L8.219 17.28 6.78 18.72l8.5 8.5.719.687.719-.687 8.5-8.5-1.438-1.438L17 24.063V4h-2z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-arrow-left" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M13.281 6.781l-8.5 8.5-.687.719.687.719 8.5 8.5 1.438-1.438L7.938 17H28v-2H7.937l6.782-6.781L13.28 6.78z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-arrow-right" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M18.719 6.781L17.28 8.22 24.063 15H4v2h20.063l-6.782 6.781 1.438 1.438 8.5-8.5.687-.719-.687-.719-8.5-8.5z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-arrow-up" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 4.094l-.719.687-8.5 8.5L8.22 14.72 15 7.938V28h2V7.937l6.781 6.782 1.438-1.438-8.5-8.5L16 4.094z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-binoculars" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M11 5C9.031 5 7.46 6.441 7.125 8.313c-1.89.476-3.531 1.707-4.25 3.656h-.031L.719 17.938A6.955 6.955 0 000 21c0 3.855 3.145 7 7 7 3.473 0 6.367-2.55 6.906-5.875A2.983 2.983 0 0016 23c.813 0 1.55-.34 2.094-.875C18.633 25.449 21.527 28 25 28c3.855 0 7-3.145 7-7 0-.973-.2-1.906-.563-2.75l-2.28-6.375-.032-.031v-.031c-.73-1.774-2.348-3.012-4.25-3.5C24.539 6.44 22.969 5 21 5c-1.855 0-3.363 1.285-3.813 3h-2.375C14.364 6.285 12.855 5 11 5zm0 2c1.191 0 2 .809 2 2v1h6V9c0-1.191.809-2 2-2 1.191 0 2 .809 2 2v.906l.906.094c1.485.156 2.766 1.191 3.344 2.531.008.02.023.043.031.063l.75 2.125A6.94 6.94 0 0025 14c-2.926 0-5.426 1.816-6.469 4.375A3.013 3.013 0 0016 17c-1.05 0-1.996.543-2.531 1.375C12.426 15.816 9.926 14 7 14c-1.07 0-2.09.254-3 .688l.75-2.032v-.031C5.332 11.078 6.559 10.16 8.094 10L9 9.906V9c0-1.191.809-2 2-2zm-4 9c2.773 0 5 2.227 5 5s-2.227 5-5 5-5-2.227-5-5c0-.707.176-1.36.438-1.969.015-.039.015-.086.03-.125A4.977 4.977 0 017 16zm18 0c2.773 0 5 2.227 5 5s-2.227 5-5 5-5-2.227-5-5 2.227-5 5-5zm-9 3c.563 0 1 .438 1 1 0 .563-.438 1-1 1-.563 0-1-.438-1-1 0-.563.438-1 1-1z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-building" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3.906l-.375.156-12 5L3 9.345V12h2v11H3v5h26v-5h-2V12h2V9.344l-.625-.281-12-5L16 3.905zm0 2.188L25.375 10H6.625L16 6.094zM7 12h2v11H7V12zm4 0h2v11h-2V12zm4 0h2v11h-2V12zm4 0h2v11h-2V12zm4 0h2v11h-2V12zM5 25h22v1H5v-1z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-calendar" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M9 4v1H5v22h22V5h-4V4h-2v1H11V4H9zM7 7h2v1h2V7h10v1h2V7h2v2H7V7zm0 4h18v14H7V11zm6 2v2h2v-2h-2zm4 0v2h2v-2h-2zm4 0v2h2v-2h-2zM9 17v2h2v-2H9zm4 0v2h2v-2h-2zm4 0v2h2v-2h-2zm4 0v2h2v-2h-2zM9 21v2h2v-2H9zm4 0v2h2v-2h-2zm4 0v2h2v-2h-2z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-calendar-check" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M9 5v1H5v22h22V6h-4V5h-2v1H11V5zM7 8h2v1h2V8h10v1h2V8h2v2H7zm0 4h18v14H7zm13.281 2.281L15 19.562l-2.281-2.28-1.438 1.437 3 3 .719.687.719-.687 6-6z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-camera" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M11.5 6l-.313.406L10 8H3v18h26V8h-7l-1.188-1.594L20.5 6zm1 2h7l1.188 1.594L21 10h6v14H5V10h6l.313-.406zM8 11c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm8 0c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 2c2.223 0 4 1.777 4 4s-1.777 4-4 4-4-1.777-4-4 1.777-4 4-4z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-check" xmlns="http://www.w3.org/2000/svg">
+      <path d="M28.281 6.281L11 23.563 3.719 16.28 2.28 17.72l8 8 .719.687.719-.687 18-18L28.28 6.28z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-clipboard" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M15 3c1.259 0 2.152.89 2.594 2H25v23H5V5h7.406c.442-1.11 1.335-2 2.594-2zm0 2c-.555 0-1 .445-1 1v1h-3v2h8V7h-3V6c0-.555-.445-1-1-1zM7 7v19h16V7h-2v4H9V7H7z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-clipboard-list" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 2c-1.26 0-2.15.89-2.59 2H5v25h22V4h-8.41c-.44-1.11-1.33-2-2.59-2zm0 2c.55 0 1 .45 1 1v1h3v2h-8V6h3V5c0-.55.45-1 1-1zM7 6h3v4h12V6h3v21H7V6zm2 7v2h2v-2H9zm4 0v2h10v-2H13zm-4 4v2h2v-2H9zm4 0v2h10v-2H13zm-4 4v2h2v-2H9zm4 0v2h10v-2H13z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-close" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M7.219 5.781L5.78 7.22 14.563 16 5.78 24.781 7.22 26.22 16 17.437l8.781 8.782 1.438-1.438L17.437 16l8.782-8.781L24.78 5.78 16 14.563 7.219 5.78z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-collection" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 5v18h4v4h24V9h-4V5zm2 2h20v14H4zm2 2v10h16V9zm2 2h12v6H8zm18 0h2v14H8v-2h18z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-comment" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M3 6h26v20h-9.563l-2.719 2.719-.719.688-.719-.688L12.561 26H2.998V6zm2 2v16h8.406l.313.281L16 26.562l2.281-2.281.313-.281H27V8H5zm4 3h14v2H9v-2zm0 4h14v2H9v-2zm0 4h10v2H9v-2z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-compress" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M28.281 2.281L19 11.594V3h-2v12h12v-2h-8.594l9.313-9.281L28.28 2.28zM3 17v2h8.594L2.28 28.281 3.72 29.72 13 20.406V29h2V17H3z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-copy" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 4v20h7v-2H6V6h12v1h2V4H4zm8 4v20h16V8H12zm2 2h12v16H14V10z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-copyright" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3C8.832 3 3 8.832 3 16s5.832 13 13 13 13-5.832 13-13S23.168 3 16 3zm0 2c6.086 0 11 4.914 11 11s-4.914 11-11 11S5 22.086 5 16 9.914 5 16 5zm-.094 5c-3.324 0-6 2.676-6 6s2.676 6 6 6c2.399 0 4.45-1.438 5.406-3.469l-1.812-.843C18.855 19.058 17.508 20 15.906 20c-2.277 0-4-1.723-4-4s1.723-4 4-4c1.602 0 2.95.941 3.594 2.313l1.813-.844C20.355 11.438 18.305 10 15.905 10z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-delete" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3C8.832 3 3 8.832 3 16s5.832 13 13 13 13-5.832 13-13S23.168 3 16 3zm0 2c6.087 0 11 4.913 11 11s-4.913 11-11 11S5 22.087 5 16 9.913 5 16 5zm-3.781 5.781L10.78 12.22 14.562 16l-3.78 3.781 1.437 1.438L16 17.437l3.781 3.782 1.438-1.438L17.437 16l3.782-3.781-1.438-1.438L16 14.562l-3.781-3.78z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-download" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M15 4v16.563L9.719 15.28 8.28 16.72l7 7 .719.687.719-.687 7-7-1.438-1.438L17 20.562V4h-2zM7 26v2h18v-2H7z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-edit" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M24.688 4.031c-.837 0-1.648.336-2.282.969l-.093.094-.625-.594-.688.688L5.406 20.78 5.188 21l-.063.313-1.094 5.5-.312 1.468 1.469-.312 5.5-1.094.312-.063.219-.218L26.813 11l.687-.688-.594-.593.063-.063.031-.062A3.252 3.252 0 0027 5a3.285 3.285 0 00-2.313-.969zm0 1.969c.311 0 .64.14.906.406.533.534.533 1.248 0 1.782l-.094.093L23.719 6.5l.093-.094c.267-.266.564-.406.875-.406zm-2.97 1.313l2.97 2.968-1.438 1.469-3-3 1.469-1.438zm-2.843 2.875l2.938 2.937-10.438 10.469-.406-1.813-.125-.625-.625-.125-1.813-.406 10.469-10.438zM6.969 22.343l2.187.5.5 2.187-2.031.407-1.063-1.063.407-2.031z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-ellipsis-h" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 14a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-exclamation-circle" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 4C9.384 4 4 9.384 4 16s5.384 12 12 12 12-5.384 12-12S22.616 4 16 4zm0 2c5.535 0 10 4.465 10 10s-4.465 10-10 10S6 21.535 6 16 10.465 6 16 6zm-1 4v8h2v-8h-2zm0 10v2h2v-2h-2z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-expand" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 5v2h9.563L7 23.563V14H5v13h13v-2H8.437L25 8.437V18h2V5H14z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-external-link" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M18 5h9v9h-2V8.437L12.719 20.718l-1.438-1.438L23.562 6.999h-5.563v-2zM5 9h13l-2 2H7v14h14v-9l2-2v13H5V9z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-file" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 3v26h20V9.594l-.281-.313-6-6L19.406 3H6zm2 2h10v6h6v16H8V5zm12 1.438L22.563 9H20V6.437z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-file-cluster" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M6 3v26h20V9.6l-.3-.3-6-6-.3-.3H6zm2 2h10v6h6v16H8V5zm12 1.4L22.6 9H20V6.4zM15 14v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-file-pdf" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M5 3h20v26H5V3zm2 2v22h16V5H7zm7.406 5.344h.031c.33.007.656.135.906.344.257.215.428.498.531.781.207.567.235 1.188.188 1.906-.039.595-.326 1.352-.469 2.031.187.42.248.774.469 1.188.409.766.86 1.217 1.313 1.813.517-.027 1.127-.182 1.563-.125.567.074 1.089.186 1.5.625.206.22.369.553.375.875s-.098.607-.25.875v.031h-.031c-.345.586-.969.976-1.594.938s-1.148-.368-1.625-.781c-.236-.205-.429-.616-.656-.875-.529.06-.906-.001-1.469.125-.537.12-.902.332-1.406.5-.334.672-.599 1.509-.969 2-.4.531-.818.984-1.406 1.188-.294.102-.645.097-.969-.031s-.566-.349-.75-.625c-.372-.529-.404-1.263-.125-1.781s.747-.887 1.281-1.219c.496-.308 1.245-.45 1.875-.688.276-.598.576-.984.813-1.656.275-.783.321-1.455.5-2.219-.35-.837-.787-1.712-.938-2.438-.128-.62-.169-1.181-.031-1.719.069-.269.184-.535.438-.75.246-.208.601-.317.906-.313zm.657 7.406c-.06.184-.061.348-.125.531-.055.157-.13.252-.188.406.048-.011.077-.052.125-.063.285-.064.499-.012.781-.063-.193-.295-.413-.496-.594-.813zm3.687 2.031c-.064-.008-.211.037-.281.031.243.17.495.308.563.313.08.005.096.018.219-.188.012-.021-.007-.015 0-.031-.045-.019-.163-.081-.5-.125zm-7 1.563c-.031.019-.095.044-.125.063-.409.254-.646.522-.719.656s-.103.072 0 .219h.031c.02.03-.012.018 0 .031.071-.03.351-.219.656-.625.054-.072.101-.262.156-.344z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-file-text" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M6 3v26h20V9.594l-.281-.313-6-6L19.406 3H6zm2 2h10v6h6v16H8V5zm12 1.438L22.563 9H20V6.437zM11 13v2h10v-2H11zm0 4v2h10v-2H11zm0 4v2h10v-2H11z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-file-word" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M5 3h20v26H5V3zm2 2v22h16V5H7zm10 7h4v2h-2v4.5c0 1.383-1.117 2.5-2.5 2.5-.386 0-.604-.283-.906-.469-.408.824-1.11 1.469-2.094 1.469a2.497 2.497 0 01-2.5-2.5V15H9v-2h4v6.5c0 .217.283.5.5.5s.5-.283.5-.5V15h2v2s.007.652.156 1.25c.075.299.198.577.281.688s.021.063.063.063c.217 0 .5-.283.5-.5v-6.5z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-file-zip" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M6 3v26h20V3H6zm2 2h7v1h2V5h7v22H8V5zm7 2v2h2V7h-2zm0 3v2h2v-2h-2zm0 3v2.188c-1.156.418-2 1.52-2 2.812 0 1.645 1.355 3 3 3s3-1.355 3-3c0-1.292-.844-2.394-2-2.813V13h-2zm1 4c.564 0 1 .436 1 1 0 .564-.436 1-1 1-.564 0-1-.436-1-1 0-.564.436-1 1-1z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-filter" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M5 4v2.344l.219.281L13 16.344V28l1.594-1.188 4-3L19 23.5v-7.156l7.781-9.719.219-.281V4H5zm2.281 2H24.72l-7.188 9H14.47L7.28 6zM15 17h2v5.5L15 24v-7z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-flag" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 5v24h2V19h8v3h12V8H17V5H5zm2 2h8v10H7V7zm10 3h8v10h-8V10z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-folder" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M6 3v26h20V15.437l1.719-1.718.281-.313V3H6zm2 2h14v8.406l.281.313L24 15.438V27H8V5zm16 0h2v7.563l-1 1-1-1V5z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-folder-open" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M5 3v24.813l.781.156 12 2.5 1.219.25V28h6V15.437l1.719-1.718.281-.313V3H5zm9.125 2H25v7.563l-1.719 1.718-.281.313V26h-4v-8.906l-.281-.313L17 15.063V5.718l-.75-.188L14.125 5zM7 5.281l8 2v8.625l.281.313L17 17.937V28.282L7 26.188V5.28z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-globe-solid" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 4C9.383 4 4 9.383 4 16s5.383 12 12 12 12-5.383 12-12S22.617 4 16 4zm0 2c1.969 0 3.797.586 5.344 1.563l-.813.093.188 2-1.063-.469-.875.75.157 2.063 2.156-.688 2.687.876-.687 1.25-1.625-1-1.75.25L18 13.967l-.969 3 1.938 1.595s1.988-.344 2.093-.344c.106 0 .844 1.812.844 1.812l-1.593 5c-1.301.621-2.77.969-4.313.969-.316 0-.629-.035-.938-.063l-1.093-1.906 1.062-4L11 17H7.281l-.968-1.969L9 12.906 13 11l-.594-2.656 1.719-.375.813 1.125 3-.563-.532-2.312-2.218-.157C15.453 6.043 15.726 6 16 6zm-1.125.063l-1.563.656-.75-.125a9.867 9.867 0 012.313-.532zM6.062 16.78l.97 1.125v2.063l1.874 2.062h1.156l2.844 3.5c-3.773-1.222-6.527-4.64-6.844-8.75z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-history" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 4c6.616 0 12 5.385 12 12s-5.385 12-12 12S4 22.615 4 16h2c0 5.535 4.465 10 10 10s10-4.465 10-10S21.535 6 16 6c-3.702 0-6.897 2.02-8.625 5H11v2H4V6h2v3.344A11.987 11.987 0 0116 4zm-1 4h2v7h5v2h-7V8z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-home" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 2.594l-.719.687-13 13L3.72 17.72 5 16.437V28h9V18h4v10h9V16.437l1.281 1.282 1.438-1.438-13-13L16 2.594zm0 2.844l9 9V26h-5V16h-8v10H7V14.437l9-9z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-hourglass-half" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M7 4h18v2h-2v4a7.006 7.006 0 01-3.406 6A7.004 7.004 0 0123 22v4h2v2H7v-2h2v-4a7.006 7.006 0 013.406-6A7.004 7.004 0 019 10V6H7V4zm4 2v4c0 2.774 2.226 5 5 5s5-2.226 5-5V6H11zm1.156 5h7.688c-.447 1.722-1.982 3-3.844 3s-3.398-1.278-3.844-3zM16 17c-2.774 0-5 2.226-5 5v4h1a4 4 0 018 0h1v-4c0-2.774-2.226-5-5-5z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-image" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M2 5v22h28V5zm2 2h24v13.906l-5.281-5.312-.719-.719-4.531 4.531-5.75-5.812-.719-.719-7 7zm20 2a1.999 1.999 0 100 4 1.999 1.999 0 100-4zm-13 6.719L20.188 25H4v-2.281zm11 2l6 6V25h-4.969l-4.156-4.188z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-image-stack" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M2.2 8.2v19h24.2v-19H2.2zm1.7 1.7h20.8v12l-5.2-5.2-3.9 3.9-5-5-.7-.6-6.1 6.1V9.9zm17.3 1.8c-1 0-1.7.8-1.7 1.7s.8 1.7 1.7 1.7 1.7-.8 1.7-1.7-.8-1.7-1.7-1.7zM9.9 17.5l7.9 8h-14v-2l6.1-6zm9.6 1.7l5.2 5.2v1.1h-4.3l-3.6-3.6 2.7-2.7zM5.6 4.8v1.7h22.5v17.3h1.7v-19z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-inbox" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M7.156 5L7 5.844l-2 13V27h22v-8.156l-2-13L24.844 5H7.156zm1.719 2h14.25l1.688 11H18v1c0 1.117-.883 2-2 2s-2-.883-2-2v-1H7.187L8.876 7zM7 20h5.188c.453 1.71 1.965 3 3.812 3 1.847 0 3.359-1.29 3.813-3H25v5H7v-5z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-info" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3c7.168 0 13 5.832 13 13s-5.832 13-13 13S3 23.168 3 16 8.832 3 16 3zm0 2C9.913 5 5 9.913 5 16s4.913 11 11 11 11-4.913 11-11S22.087 5 16 5zm-1 5h2v2h-2v-2zm0 4h2v8h-2v-8z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-location" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3c-4.959 0-9 4.041-9 9 0 1.406.57 3.02 1.344 4.781.774 1.762 1.77 3.631 2.781 5.375a101.39 101.39 0 004.063 6.407L16 29.75l.813-1.188s2.039-2.918 4.062-6.406c1.012-1.744 2.007-3.613 2.781-5.375C24.43 15.02 25 13.406 25 12c0-4.959-4.041-9-9-9zm0 2c3.877 0 7 3.123 7 7 0 .803-.43 2.316-1.156 3.969-.726 1.652-1.73 3.483-2.719 5.187-1.572 2.71-2.546 4.144-3.125 5-.579-.856-1.553-2.29-3.125-5-.988-1.704-1.993-3.535-2.719-5.187C9.43 14.316 9 12.803 9 12c0-3.877 3.123-7 7-7zm0 5a2 2 0 100 4 2 2 0 000-4z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-minus" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3c7.168 0 13 5.832 13 13s-5.832 13-13 13S3 23.168 3 16 8.832 3 16 3zm0 2C9.913 5 5 9.913 5 16s4.913 11 11 11 11-4.913 11-11S22.087 5 16 5zm-6 10h12v2H10v-2z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-music" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M27 3.781l-1.188.25-16 3L9 7.156v13.407A3.93 3.93 0 007 20c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4V12.812l14-2.624v7.374A3.93 3.93 0 0023 17c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4zm-2 2.406v2l-14 2.626v-2zM23 19c1.117 0 2 .883 2 2s-.883 2-2 2-2-.883-2-2 .883-2 2-2zM7 22c1.117 0 2 .883 2 2s-.883 2-2 2-2-.883-2-2 .883-2 2-2z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-music-circle" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 4A12.04 12.04 0 004 16a12.04 12.04 0 0012 12 12.04 12.04 0 0012-12A12.04 12.04 0 0016 4zm0 2c5.5 0 10 4.5 10 10s-4.5 10-10 10S6 21.5 6 16 10.5 6 16 6zm5.6 4l-.6.1-8.4 1.6-.4.1v7a1.93 1.93 0 00-1-.3c-1.2 0-2.1.9-2.1 2.1s.9 2.1 2.1 2.1 2.1-.9 2.1-2.1v-5.9l7.3-1.4v3.9a1.93 1.93 0 00-1-.3c-1.2 0-2.1.9-2.1 2.1s.9 2.1 2.1 2.1 2.1-.9 2.1-2.1v-9zm-1 1.3v1l-7.3 1.4v-1l7.3-1.4zM19.5 18c.6 0 1 .5 1 1a1.08 1.08 0 01-1 1 1.08 1.08 0 01-1-1 1.08 1.08 0 011-1zm-8.3 1.6c.6 0 1 .5 1 1a1.08 1.08 0 01-1 1c-.6 0-1-.5-1-1s.4-1 1-1z" />
+      <path
+        d="M21.6 11l-.6.1-8.4 1.6-.4.1v7a1.93 1.93 0 00-1-.3c-1.2 0-2.1.9-2.1 2.1s.9 2.1 2.1 2.1 2.1-.9 2.1-2.1v-5.9l7.3-1.4v3.9a1.93 1.93 0 00-1-.3c-1.2 0-2.1.9-2.1 2.1s.9 2.1 2.1 2.1 2.1-.9 2.1-2.1v-9zm-1 1.3v1l-7.3 1.4v-1l7.3-1.4zM19.5 19c.6 0 1 .5 1 1a1.08 1.08 0 01-1 1 1.08 1.08 0 01-1-1 1.08 1.08 0 011-1zm-8.3 1.6c.6 0 1 .5 1 1a1.08 1.08 0 01-1 1c-.6 0-1-.5-1-1s.4-1 1-1z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-newspaper" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M3 5v18c0 2.21 1.79 4 4 4h18c2.21 0 4-1.79 4-4V12h-6V5zm2 2h16v16c0 .73.223 1.41.563 2H7c-1.191 0-2-.809-2-2zm2 2v5h12V9zm2 2h8v1H9zm14 3h4v9c0 1.191-.809 2-2 2-1.191 0-2-.809-2-2zM7 15v2h5v-2zm7 0v2h5v-2zm-7 3v2h5v-2zm7 0v2h5v-2zm-7 3v2h5v-2zm7 0v2h5v-2z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-notification" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3a2 2 0 00-2 2c0 .085.02.168.031.25C10.574 6.134 8 9.274 8 13v9c0 .565-.435 1-1 1H6v2h7.188A2.918 2.918 0 0013 26c0 1.645 1.355 3 3 3s3-1.355 3-3c0-.353-.073-.684-.188-1H26v-2h-1c-.565 0-1-.435-1-1v-8.719c0-3.758-2.51-7.107-6.031-8.031.01-.082.031-.165.031-.25a2 2 0 00-2-2zm-.438 4c.146-.01.29 0 .438 0 .064 0 .123-.002.188 0C19.453 7.098 22 9.962 22 13.281V22c0 .353.073.684.188 1H9.813c.114-.316.187-.647.187-1v-9a6.004 6.004 0 015.563-6zM16 25c.564 0 1 .436 1 1 0 .564-.436 1-1 1-.564 0-1-.436-1-1 0-.564.436-1 1-1z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-paper-plane" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M3.594 5.344l.437 1.875L5.97 16 4.03 24.781l-.437 1.875 1.781-.718 22-9L29.656 16l-2.281-.938-22-9-1.781-.718zm2.781 3.312L21.906 15H7.781L6.375 8.656zM7.781 17h14.125L6.375 23.344 7.781 17z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-play" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 5.156v21.688l1.531-1L25.844 16 10.53 6.156zm2 3.657L22.156 16 11 23.188z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-plus" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 5v10H5v2h10v10h2V17h10v-2H17V5h-2z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-project-diagram" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M3 6v8h5.635L12 19.908V27h8v-8h-6.217l-2.845-5H11v-3h10v3h8V6h-8v3H11V6H3zm2 2h4v4H5V8zm18 0h4v4h-4V8zm-8.582 13H18v4h-4v-3.762l.418-.238z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-rotate-clockwise" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3C8.832 3 3 8.832 3 16s5.832 13 13 13 13-5.832 13-13h-2c0 6.086-4.914 11-11 11S5 22.086 5 16 9.914 5 16 5c3.875 0 7.262 1.984 9.219 5H20v2h8V4h-2v3.719C23.617 4.844 20.02 3 16 3z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-rotate-ct-clockwise" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3C12 3 8.4 4.8 6 7.7V4H4v8h8v-2H6.8c2-3 5.3-5 9.2-5 6.1 0 11 4.9 11 11s-4.9 11-11 11S5 22.1 5 16H3c0 7.2 5.8 13 13 13s13-5.8 13-13S23.2 3 16 3z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-save" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M5 5v22h22V9.594l-.281-.313-4-4L22.406 5zm2 2h3v6h12V7.437l3 3V25h-2v-9H9v9H7zm5 0h4v2h2V7h2v4h-8zm-1 11h10v7H11z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-search" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M19 3C13.489 3 9 7.489 9 13a9.92 9.92 0 002.25 6.313L3.281 27.28 4.72 28.72l7.968-7.969A9.92 9.92 0 0019 23c5.511 0 10-4.489 10-10S24.511 3 19 3zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-settings" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M13.188 3l-.157.813-.594 2.968a9.934 9.934 0 00-2.593 1.532l-2.906-1-.782-.25-.406.718-2 3.438-.406.719.594.53 2.25 1.97C6.104 14.95 6 15.459 6 16c0 .54.104 1.05.188 1.563l-2.25 1.968-.594.532.406.718 2 3.438.406.718.782-.25 2.906-1a9.942 9.942 0 002.594 1.532l.593 2.968.156.813H18.813l.156-.813.593-2.968a9.934 9.934 0 002.594-1.532l2.907 1 .78.25.407-.718 2-3.438.406-.718-.593-.532-2.25-1.968C25.895 17.049 26 16.54 26 16c0-.54-.104-1.05-.188-1.563l2.25-1.968.594-.531-.406-.72-2-3.437-.406-.718-.782.25-2.906 1a9.942 9.942 0 00-2.593-1.532l-.594-2.968L18.812 3h-5.625zm1.624 2h2.376l.5 2.594.125.593.562.188a7.977 7.977 0 013.031 1.75l.438.406.562-.187 2.532-.875 1.187 2.031-2 1.781-.469.375.157.594c.127.57.187 1.153.187 1.75s-.06 1.178-.188 1.75l-.125.594.438.375 2 1.781-1.188 2.031-2.53-.875-.563-.187-.438.406a7.97 7.97 0 01-3.031 1.75l-.563.188-.125.593-.5 2.594h-2.375l-.5-2.594-.124-.593-.563-.188a7.977 7.977 0 01-3.031-1.75l-.438-.406-.562.187-2.531.875L5.875 20.5l2-1.781.469-.375-.156-.594A7.986 7.986 0 018 16c0-.597.06-1.18.188-1.75l.156-.594-.469-.375-2-1.781 1.188-2.031 2.53.875.563.187.438-.406a7.97 7.97 0 013.031-1.75l.563-.188.124-.593.5-2.594zM16 11c-2.75 0-5 2.25-5 5s2.25 5 5 5 5-2.25 5-5-2.25-5-5-5zm0 2c1.669 0 3 1.331 3 3s-1.331 3-3 3-3-1.331-3-3 1.331-3 3-3z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-spinner" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3a3 3 0 110 6 3 3 0 010-6zM8.938 6.438a2.5 2.5 0 110 5 2.5 2.5 0 010-5zm14.125 1.5a1 1 0 110 2 1 1 0 010-2zM6 13.75a2.25 2.25 0 110 4.5 2.25 2.25 0 010-4.5zm20 1a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM8.938 21.063a2 2 0 11.001 3.999 2 2 0 01-.001-3.999zm14.125.5a1.5 1.5 0 11-.001 3.001 1.5 1.5 0 01.001-3.001zM16 24.25a1.75 1.75 0 11-.001 3.501A1.75 1.75 0 0116 24.25z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-th-large" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 5v22h22V5H5zm2 2h8v8H7V7zm10 0h8v8h-8V7zM7 17h8v8H7v-8zm10 0h8v8h-8v-8z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-th-list" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M4 6v20h24V6H4zm2 2h5v4H6V8zm7 0h13v4H13V8zm-7 6h5v4H6v-4zm7 0h13v4H13v-4zm-7 6h5v4H6v-4zm7 0h13v4H13v-4z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-thumbs-up" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16.688 3h.406C18.71 3 20.002 4.23 20 5.656c0 1.336-.468 2.327-.938 2.969-.294.401-.422.469-.625.625l-.188.75h5.75c1.888 0 3.333 1.779 2.938 3.625l-2.156 10A3.019 3.019 0 0121.843 26H4.999V10h4.594l6.781-6.719zm.718 2.094L11 11.407v12.594h10.844c.477 0 .9-.314 1-.781l2.125-10c.138-.644-.309-1.219-.969-1.219h-8.344l.313-1.25.594-2.25.125-.406.344-.188s.179-.084.438-.438.531-.91.531-1.813c0-.308-.172-.481-.594-.563zM7 12v12h2V12H7z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-toggle-off" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M9 7h14c4.959 0 9 4.041 9 9s-4.041 9-9 9H9c-.94 0-1.835-.137-2.688-.406a8.579 8.579 0 01-.813-.313 9.067 9.067 0 01-5.094-5.594c-.003-.009.003-.022 0-.031A8.843 8.843 0 01-.001 16c0-.94.137-1.835.406-2.688.088-.282.198-.543.313-.813a9.067 9.067 0 015.594-5.094c.282-.088.582-.159.875-.219A9.028 9.028 0 019 6.998zm0 2a6.988 6.988 0 00-6.969 6.281A7.115 7.115 0 002 16c0 3.878 3.123 7 7 7s7-3.122 7-7-3.122-7-7-7zm5.625 0C16.676 10.652 18 13.171 18 16s-1.324 5.348-3.375 7H23c3.878 0 7-3.122 7-7s-3.122-7-7-7h-8.375z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-toggle-on" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M9 7h14c4.959 0 9 4.041 9 9s-4.041 9-9 9H9c-4.962 0-9-4.037-9-9s4.038-9 9-9zm14 2c-3.878 0-7 3.122-7 7s3.122 7 7 7 7-3.122 7-7-3.122-7-7-7z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-trash" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M15 4c-.522 0-1.06.185-1.438.563C13.185 4.94 13 5.478 13 6v1H7v2h1v16c0 1.645 1.355 3 3 3h12c1.645 0 3-1.355 3-3V9h1V7h-6V6c0-.522-.185-1.06-.563-1.438C20.06 4.186 19.523 4 19 4h-4zm0 2h4v1h-4V6zm-5 3h14v16c0 .555-.445 1-1 1H11c-.555 0-1-.445-1-1V9zm2 3v11h2V12h-2zm4 0v11h2V12h-2zm4 0v11h2V12h-2z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-undo" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M12.781 5.281l-8 8-.687.719.687.719 8 8 1.438-1.438L7.938 15H21c2.754 0 5 2.246 5 5v7h2v-7c0-3.844-3.156-7-7-7H7.937l6.282-6.281z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-upload" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3.594l.719.688 7 7-1.438 1.438L17 7.439v16.563h-2V7.439L9.719 12.72l-1.438-1.438 7-7zM7 26h18v2H7v-2z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-user" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 5c-3.854 0-7 3.146-7 7a7.026 7.026 0 003.094 5.813C8.527 19.343 6 22.88 6 27h2c0-4.43 3.57-8 8-8s8 3.57 8 8h2c0-4.119-2.527-7.658-6.094-9.188A7.026 7.026 0 0023 12c0-3.854-3.146-7-7-7zm0 2c2.773 0 5 2.227 5 5s-2.227 5-5 5-5-2.227-5-5 2.227-5 5-5z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-user-edit" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M13 3c-3.855 0-7 3.145-7 7 0 2.41 1.23 4.55 3.094 5.813C5.527 17.343 3 20.883 3 25h2c0-4.43 3.57-8 8-8 2.145 0 4.063.879 5.5 2.25l-4.719 4.719-.062.312-.688 3.532-.312 1.468 1.469-.312 3.53-.688.313-.062 10.094-10.094c1.16-1.16 1.16-3.09 0-4.25a3.018 3.018 0 00-4.219-.031l-3.968 3.969a10.103 10.103 0 00-3.032-2A7.024 7.024 0 0020 10c0-3.855-3.145-7-7-7zm0 2c2.773 0 5 2.227 5 5s-2.227 5-5 5-5-2.227-5-5 2.227-5 5-5zm13 10c.254 0 .52.082.719.281a.977.977 0 010 1.406l-9.688 9.688-1.781.375.375-1.781 9.688-9.688c.199-.199.433-.281.687-.281z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-user-tie" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 4c-3.855 0-7 3.145-7 7 0 2.379 1.21 4.484 3.031 5.75C7.926 18.352 5 22.352 5 27h2c0-4.398 3.191-8.074 7.375-8.844L15 20h2l.625-1.844C21.809 18.926 25 22.602 25 27h2c0-4.648-2.926-8.648-7.031-10.25C21.789 15.484 23 13.379 23 11c0-3.855-3.145-7-7-7zm0 2c2.773 0 5 2.227 5 5s-2.227 5-5 5-5-2.227-5-5 2.227-5 5-5zm-1 15l-1 6h4l-1-6z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-video" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 4C9.383 4 4 9.383 4 16s5.383 12 12 12 12-5.383 12-12S22.617 4 16 4zm0 2c5.535 0 10 4.465 10 10s-4.465 10-10 10S6 21.535 6 16 10.465 6 16 6zm-4 3.125v13.75L13.5 22l9-5.125L24 16l-1.5-.875-9-5.125zm2 3.438L19.969 16 14 19.438z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-visible" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 8C7.664 8 1.25 15.344 1.25 15.344L.656 16l.594.656s5.85 6.668 13.625 7.282c.372.047.74.062 1.125.062.384 0 .753-.015 1.125-.063 7.776-.613 13.625-7.28 13.625-7.28l.594-.657-.594-.656S24.336 8 16 8zm0 2c2.202 0 4.235.602 6 1.406A6.9 6.9 0 0123 15a6.994 6.994 0 01-6.219 6.969c-.02.002-.041-.002-.062 0-.239.013-.476.031-.719.031-.264 0-.522-.015-.781-.031A6.994 6.994 0 019 15c0-1.305.35-2.518.969-3.563h-.031C11.717 10.617 13.771 10 16 10zm0 2a3 3 0 100 6 3 3 0 000-6zm-8.75.938A8.93 8.93 0 007 15c0 1.754.502 3.395 1.375 4.781A23.092 23.092 0 013.531 16a24.056 24.056 0 013.719-3.063zm17.5 0A24.056 24.056 0 0128.469 16a23.092 23.092 0 01-4.844 3.781A8.941 8.941 0 0025 15c0-.714-.093-1.397-.25-2.063z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-warning" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3.219l.875 1.5 12 20.781.844 1.5H2.281l.844-1.5 12-20.781zm0 4L5.75 25h20.5zM15 14h2v6h-2v-6zm0 7h2v2h-2v-2z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-zoom-in" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M19 3C13.488 3 9 7.488 9 13c0 2.395.84 4.59 2.25 6.313L3.281 27.28 4.72 28.72l7.968-7.969A9.922 9.922 0 0019 23c5.512 0 10-4.488 10-10S24.512 3 19 3zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8zm-1 4v3h-3v2h3v3h2v-3h3v-2h-3V9z" />
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="sh-icon-zoom-out" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M19 3C13.488 3 9 7.488 9 13c0 2.395.84 4.59 2.25 6.313L3.281 27.28 4.72 28.72l7.968-7.969A9.922 9.922 0 0019 23c5.512 0 10-4.488 10-10S24.512 3 19 3zm0 2c4.43 0 8 3.57 8 8s-3.57 8-8 8-8-3.57-8-8 3.57-8 8-8zm-4 7v2h8v-2z" />
+    </symbol>
+  </svg>
+
+  <div class="main-layout">
+    <div id="nav" class="main-layout__nav">
+      <header role="banner">
+        <a href="/" title="Homepage of the application" class="sh-logo-link">
+          <img
+                            src="https://dev.mediahaven.com/stylehaven-branches/master/assets/images/logo/mediahaven-plain.svg"
+                            alt="Zeticon"
+                            class="sh-logo sh-logo-link__logo"
+                        />
+        </a>
+      </header>
+      <nav role="navigation" class="sh-navigation">
+        <ul class="sh-navigation__list">
+          <li class="sh-navigation__list__item">
+            <a href="#" aria-current="page" class="sh-navigation__link -sh-active">
+              <svg class="sh-icon sh-navigation__link__icon">
+                <use xlink:href="#sh-icon-home" />
+              </svg>
+              <span class="sh-navigation__link__label"
+                                    >Navigation Item</span>
+            </a>
+          </li>
+          <li class="sh-navigation__list__item">
+            <button class="sh-navigation__link">
+                                <svg class="sh-icon sh-navigation__link__icon">
+                                    <use xlink:href="#sh-icon-edit" />
+                                </svg>
+                                <span class="sh-navigation__link__label"
+                                    >Navigation Item</span
+                                >
+                            </button>
+          </li>
+          <li class="sh-navigation__list__item">
+            <a href="#" class="sh-navigation__link">
+              <svg class="sh-icon sh-navigation__link__icon">
+                <use xlink:href="#sh-icon-search" />
+              </svg>
+              <span class="sh-navigation__link__label"
+                                    >Navigation Item</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="sh-navigation__list -sh-to-bottom">
+          <li class="sh-navigation__list__item">
+            <a href="#" class="sh-navigation__link">
+              <svg class="sh-icon sh-navigation__link__icon">
+                <use xlink:href="#sh-icon-trash" />
+              </svg>
+              <span class="sh-navigation__link__label"
+                                    >Navigation Item</span>
+            </a>
+          </li>
+          <li class="sh-navigation__list__item">
+            <a href="#" class="sh-navigation__link">
+              <svg class="sh-icon sh-navigation__link__icon">
+                <use xlink:href="#sh-icon-settings" />
+              </svg>
+              <span class="sh-navigation__link__label"
+                                    >Navigation Item</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="main-layout__content">
+      <div class="content-context-layout">
+        <div class="content-context-layout__content">
+          <div class="page-section-layout --page-section-layout--wide-spacing">
+            <article class="sh-page-template__main__content">
+              <div class="sh-page-header">
+                <nav class="sh-page-header__navigation">
+                  <div class="sh-action-group">
+                    <a href="#" class="sh-link sh-icon-link sh-action-group__item">
+                      <svg class="sh-icon--small sh-icon-link__icon -sh-align-start" aria-hidden="true">
+                        <use xlink:href="#sh-icon-arrow-left"></use>
+                      </svg>
+                      Back to overview
+                    </a>
+                  </div>
+                </nav>
+                <header class="sh-page-header__head">
+                  <h2 class="sh-page-title">
+                    Item Title
+                  </h2>
+                </header>
+                <div class="sh-page-header__context">
+                  <dl class="sh-inline-description-list">
+                    <dt class="sh-inline-description-list__term">
+                      <svg class="sh-icon sh-inline-description-list__term__icon" aria-hidden="true">
+                        <use xlink:href="#sh-icon-user"></use>
+                      </svg>
+                      Toegekend aan:
+                    </dt>
+                    <dd class="sh-inline-description-list__details">
+                      Cindy L.
+                    </dd>
+                    <dt class="sh-inline-description-list__term">
+                      <svg class="sh-icon sh-inline-description-list__term__icon" aria-hidden="true">
+                        <use xlink:href="#sh-icon-notification"></use>
+                      </svg>
+                      Deadline:
+                    </dt>
+                    <dd class="sh-inline-description-list__details">
+                      07 juni 2019
+                    </dd>
+                  </dl>
+                </div>
+                <div class="sh-page-header__actions">
+                  <div class="sh-action-group -sh-condense">
+                    <button type="button" class="sh-button sh-action-group__item">Adjust</button>
+                    <button type="button" class="sh-pure-square-icon-button--light sh-action-group__item" aria-label="more">
+                <svg class="sh-icon--small sh-icon-button__icon" aria-hidden="true"><use xlink:href="#sh-icon-ellipsis-h"></use></svg>
+            </button>
+                  </div>
+                </div>
+              </div>
+              <nav class="sh-tab-navigation">
+                <a href="#" class="sh-tab-navigation__item -sh-is-active">
+                  Item
+                </a>
+                <a href="#" class="sh-tab-navigation__item">
+                  Collectie
+                </a>
+              </nav>
+
+              <div class="sh-item-detail-content-template">
+                <aside class="sh-item-detail-content-template__aside">
+                  <div class="sh-item-detail-content-template__aside__sticky-area">
+                    <figure class="sh-media-with-overlay">
+                      <div class="sh-contained-media">
+                        <img class="sh-contained-media__media--cover" src="https://dev.mediahaven.com/stylehaven/assets/images/dummy/item-1000x500.jpg" alt="Description of the media item">
+                      </div>
+                      <figcaption class="sh-media-with-overlay__overlay">
+                        <dl class="sh-inline-description-list -sh-condense sh-media-with-overlay__overlay__type">
+                          <dt class="sh-inline-description-list__term">
+                            <svg class="sh-inline-description-list__term__icon sh-icon -sh-on-dark" aria-hidden="true">
+                              <use xlink:href="#sh-icon-image"></use>
+                            </svg>
+                          </dt>
+                          <dd class="sh-inline-description-list__details -sh-diminish">
+                            Image
+                          </dd>
+                        </dl>
+                        <button type="button" class="sh-media-with-overlay__overlay__action">
+                        <span class="sh-media-with-overlay__overlay__action__label">
+                            <svg class="sh-icon--small sh-media-with-overlay__overlay__action__label__icon" aria-hidden="true"><use xlink:href="#sh-icon-expand"></use></svg>
+                            View item larger
+                        </span>
+                    </button>
+                      </figcaption>
+                    </figure>
+                  </div>
+                </aside>
+                <section class="sh-item-detail-content-template__content">
+                  <div class="sh-item-detail-content-template__content__sticky-area">
+                    <nav class="sh-tab-navigation--small">
+                      <a href="#description" class="sh-tab-navigation__item -sh-is-active" aria-current="location">
+                        Beschrijving
+                      </a>
+                      <a href="#location" class="sh-tab-navigation__item">
+                        Locatie
+                      </a>
+                      <a href="#recording" class="sh-tab-navigation__item">
+                        Opname
+                      </a>
+                      <a href="#permissions" class="sh-tab-navigation__item">
+                        Rechten en privacy
+                      </a>
+                      <a href="#technical" class="sh-tab-navigation__item">
+                        Technische gegevens
+                      </a>
+                    </nav>
+                  </div>
+
+                  <h4 id="description">
+                    Beschrijving
+                  </h4>
+                  <p>
+                    Dynamic websites are generated on the fly and use server-side technology to generate webpages. They
+                    typically extract their content from one or more back-end databases: some are database queries
+                    across a relational database to query a catalogue or to summarise numeric information, others may
+                    use a document database such as MongoDB or NoSQL to store larger units of content, such as blog
+                    posts or wiki articles. When dynamic web pages first developed, they were typically coded directly
+                    in languages such as Perl, PHP or ASP. Some of these, notably PHP and ASP, used a template approach
+                    where a server-side page resembled the structure of the completed client-side page and data was
+                    inserted into places defined by tags. This was a quicker means of development than coding in a
+                    purely procedural coding language such as Perl.
+                  </p>
+
+                  <h4 id="location">
+                    Locatie
+                  </h4>
+                  <p>
+                    In the design process, dynamic pages are often mocked-up or wireframed using static pages. The
+                    skillset needed to develop dynamic web pages is much broader than for a static pages, involving
+                    server-side and database coding as well as client-side interface design. Even medium-sized dynamic
+                    projects are thus almost always a team effort.
+                  </p>
+                  <p>
+                    When dynamic web pages first developed, they were typically coded directly in languages such as
+                    Perl, PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a server-side
+                    page resembled the structure of the completed client-side page and data was inserted into places
+                    defined by tags. This was a quicker means of development than coding in a purely procedural coding
+                    language such as Perl. In the design process, dynamic pages are often mocked-up or wireframed using
+                    static pages. The skillset needed to develop dynamic web pages is much broader than for a static
+                    pages, involving server-side and database coding as well as client-side interface design. Even
+                    medium-sized dynamic projects are thus almost always a team effort.
+                  </p>
+
+                  <h4 id="recording">
+                    Opname
+                  </h4>
+                  <p>
+                    When dynamic web pages first developed, they were typically coded directly in languages such as
+                    Perl, PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a server-side
+                    page resembled the structure of the completed client-side page and data was inserted into places
+                    defined by tags. This was a quicker means of development than coding in a purely procedural coding
+                    language such as Perl. When dynamic web pages first developed, they were typically coded directly in
+                    languages such as Perl, PHP or ASP. Some of these, notably PHP and ASP, used a template approach
+                    where a server-side page resembled the structure of the completed client-side page and data was
+                    inserted into places defined by tags. This was a quicker means of development than coding in a
+                    purely procedural coding language such as Perl.
+                  </p>
+
+                  <h4 id="permissions">
+                    Rechten en privacy
+                  </h4>
+                  <p>
+                    Dynamic websites are generated on the fly and use server-side technology to generate webpages. They
+                    typically extract their content from one or more back-end databases: some are database queries
+                    across a relational database to query a catalogue or to summarise numeric information, others may
+                    use a document database such as MongoDB or NoSQL to store larger units of content, such as blog
+                    posts or wiki articles.
+                  </p>
+
+                  <h4 id="technical">
+                    Technische gegevens
+                  </h4>
+                  <p>
+                    In the design process, dynamic pages are often mocked-up or wireframed using static pages. The
+                    skillset needed to develop dynamic web pages is much broader than for a static pages, involving
+                    server-side and database coding as well as client-side interface design. Even medium-sized dynamic
+                    projects are thus almost always a team effort.
+                  </p>
+                  <p>
+                    When dynamic web pages first developed, they were typically coded directly in languages such as
+                    Perl, PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a server-side
+                    page resembled the structure of the completed client-side page and data was inserted into places
+                    defined by tags. This was a quicker means of development than coding in a purely procedural coding
+                    language such as Perl. When dynamic web pages first developed, they were typically coded directly in
+                    languages such as Perl, PHP or ASP. Some of these, notably PHP and ASP, used a template approach
+                    where a server-side page resembled the structure of the completed client-side page and data was
+                    inserted into places defined by tags. This was a quicker means of development than coding in a
+                    purely procedural coding language such as Perl.
+                  </p>
+                  <p>
+                    When dynamic web pages first developed, they were typically coded directly in languages such as
+                    Perl, PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a server-side
+                    page resembled the structure of the completed client-side page and data was inserted into places
+                    defined by tags. This was a quicker means of development than coding in a purely procedural coding
+                    language such as Perl. In the design process, dynamic pages are often mocked-up or wireframed using
+                    static pages. The skillset needed to develop dynamic web pages is much broader than for a static
+                    pages, involving server-side and database coding as well as client-side interface design. Even
+                    medium-sized dynamic projects are thus almost always a team effort.
+                  </p>
+                  <p>
+                    In the design process, dynamic pages are often mocked-up or wireframed using static pages. The
+                    skillset needed to develop dynamic web pages is much broader than for a static pages, involving
+                    server-side and database coding as well as client-side interface design. Even medium-sized dynamic
+                    projects are thus almost always a team effort.
+                  </p>
+                  <p>
+                    When dynamic web pages first developed, they were typically coded directly in languages such as
+                    Perl, PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a server-side
+                    page resembled the structure of the completed client-side page and data was inserted into places
+                    defined by tags. This was a quicker means of development than coding in a purely procedural coding
+                    language such as Perl. When dynamic web pages first developed, they were typically coded directly in
+                    languages such as Perl, PHP or ASP. Some of these, notably PHP and ASP, used a template approach
+                    where a server-side page resembled the structure of the completed client-side page and data was
+                    inserted into places defined by tags. This was a quicker means of development than coding in a
+                    purely procedural coding language such as Perl.
+                  </p>
+                </section>
+              </div>
+
+            </article>
+          </div>
+          <div class="content-context-layout__context">
+            <div class="context-bar--emphasised --page-section-layout--wide-spacing">
+              <div class="sh-page-header">
+                <header class="sh-page-header__head">
+                  <h3 class="sh-page-title--subsection">
+                    Emphasized Action Area
+                  </h3>
+                </header>
+                <div class="sh-page-header__context">
+                  <dl class="sh-inline-description-list">
+                    <dt class="sh-inline-description-list__term">
+                      <svg class="sh-icon sh-inline-description-list__term__icon" aria-hidden="true">
+                        <use xlink:href="#sh-icon-user"></use>
+                      </svg>
+                      Toegekend aan:
+                    </dt>
+                    <dd class="sh-inline-description-list__details">
+                      Cindy L.
+                    </dd>
+                    <dt class="sh-inline-description-list__term">
+                      <svg class="sh-icon sh-inline-description-list__term__icon" aria-hidden="true">
+                        <use xlink:href="#sh-icon-notification"></use>
+                      </svg>
+                      Deadline:
+                    </dt>
+                    <dd class="sh-inline-description-list__details">
+                      07 juni 2019
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+              <div class="sh-action-group -sh-condense">
+                <button type="button" class="sh-button--secondary sh-action-group__item">Weigeren</button>
+                <button type="button" class="sh-button--secondary sh-action-group__item">Indienen</button>
+              </div>
+            </div>
+            <div class="sh-action-bar context-bar --page-section-layout--wide-spacing">
+              <div class="sh-action-bar__group">
+                <div class="sh-action-bar__group__item">
+                  <div class="sh-action-group -sh-condense">
+                    <button
+                                            type="button"
+                                            class="sh-button sh-action-group__item"
+                                        >
+                                            Bewerken
+                                        </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="controls sh-action-group">
+      <li class="sh-action-group__item">
+        <button
+                    onClick="toggleNavigation()"
+                    class="sh-button--secondary sh-action-group__item__action"
+                >
+                    Toggle navigaton
+                </button>
+      </li>
+      <li class="sh-action-group__item">
+        <button
+                    onClick="toggleFilters()"
+                    class="sh-button--secondary sh-action-group__item__action"
+                >
+                    Toggle filters
+                </button>
+      </li>
+      <li class="sh-action-group__item">
+        <button
+                    onClick="toggleDetail()"
+                    class="sh-button--secondary sh-action-group__item__action"
+                >
+                    Toggle details
+                </button>
+      </li>
+    </ul>
+</body>
+
+</html>

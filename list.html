@@ -1,0 +1,713 @@
+<html>
+
+<body>
+  <div class="main-layout">
+
+    <div id="nav" class="main-layout__nav">
+      <header role="banner">
+        <a href="/" title="Homepage of the application" class="sh-logo-link">
+          <img src="https://dev.mediahaven.com/stylehaven-branches/master/assets/images/logo/mediahaven-plain.svg" alt="Zeticon" class="sh-logo sh-logo-link__logo">
+        </a>
+      </header>
+      <nav role="navigation" class="sh-navigation">
+        <ul class="sh-navigation__list">
+          <li class="sh-navigation__list__item">
+            <a href="#" aria-current="page" class="sh-navigation__link -sh-active">
+              <svg class="sh-icon sh-navigation__link__icon">
+                <use xlink:href="#sh-icon-home" />
+              </svg>
+              <span class="sh-navigation__link__label">Navigation Item</span>
+            </a>
+          </li>
+          <li class="sh-navigation__list__item">
+            <button class="sh-navigation__link">
+                <svg class="sh-icon sh-navigation__link__icon"><use xlink:href="#sh-icon-edit"/></svg>
+                <span class="sh-navigation__link__label">Navigation Item</span>
+            </button>
+          </li>
+          <li class="sh-navigation__list__item">
+            <a href="#" class="sh-navigation__link">
+              <svg class="sh-icon sh-navigation__link__icon">
+                <use xlink:href="#sh-icon-search" />
+              </svg>
+              <span class="sh-navigation__link__label">Navigation Item</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="sh-navigation__list -sh-to-bottom">
+          <li class="sh-navigation__list__item">
+            <a href="#" class="sh-navigation__link">
+              <svg class="sh-icon sh-navigation__link__icon">
+                <use xlink:href="#sh-icon-trash" />
+              </svg>
+              <span class="sh-navigation__link__label">Navigation Item</span>
+            </a>
+          </li>
+          <li class="sh-navigation__list__item">
+            <a href="#" class="sh-navigation__link">
+              <svg class="sh-icon sh-navigation__link__icon">
+                <use xlink:href="#sh-icon-settings" />
+              </svg>
+              <span class="sh-navigation__link__label">Navigation Item</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="main-layout__content">
+      <div class="list-layout">
+        <div id="filters" class="list-layout__filters">
+          <div class="sh-fixed-header-panel page-section-layout --page-section-layout--narrow-spacing">
+            <section class="sh-fixed-header-panel__head">
+              <div class="sh-fixed-header-panel__head__title">Filteren</div>
+              <div class="sh-facet-summary">
+                <p class="sh-facet-summary__title">Gekozen filters:</p>
+                <div class="sh-facet-summary__actions">
+                  <a class="sh-facet-summary__actions__action">Leegmaken</a>
+                </div>
+                <ul class="sh-tag-list">
+                  <li class="sh-tag--readonly -sh-small sh-tag-list__item">
+                    <span class="sh-tag__label">Seizoenen: Zomer</span>
+                    <button class="sh-tag__button">
+                            <svg class="sh-tag__icon"><use xlink:href="#sh-icon-delete"/></svg>
+                        </button>
+                  </li>
+                  <li class="sh-tag--readonly -sh-small sh-tag-list__item">
+                    <span class="sh-tag__label">Status: Concept</span>
+                    <button class="sh-tag__button">
+                            <svg class="sh-tag__icon"><use xlink:href="#sh-icon-delete"/></svg>
+                        </button>
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <section class="sh-fixed-header-panel__content">
+              <div class="sh-facet-list">
+                <div class="sh-facet">
+                  <label class="sh-facet__label">Beeldkwaliteit</label>
+                  <ul class="sh-facet__values sh-form-check-list">
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="low" class="sh-radio sh-form-check__input" name="filter_image_quality" value="Laag">
+                        <label class="sh-form-check__label" for="low">Laag <span class="sh-facet__values__value__count">(274)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="medium" class="sh-radio sh-form-check__input" name="filter_image_quality" value="Gemiddeld">
+                        <label class="sh-form-check__label" for="medium">Gemiddeld <span class="sh-facet__values__value__count">(37)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="high" class="sh-radio sh-form-check__input" name="filter_image_quality" value="Hoog">
+                        <label class="sh-form-check__label" for="hoog">Hoog <span class="sh-facet__values__value__count">(33)</span></label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="sh-facet">
+                  <label class="sh-facet__label">Media type</label>
+                  <ul class="sh-facet__values sh-form-check-list">
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="audio" class="sh-radio sh-form-check__input" name="filter_media_type" value="Audio">
+                        <label class="sh-form-check__label" for="audio">Audio <span class="sh-facet__values__value__count">(274)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="audiofragment" class="sh-radio sh-form-check__input" name="filter_media_type" value="Audiofragment">
+                        <label class="sh-form-check__label" for="audiofragment">Audiofragment <span class="sh-facet__values__value__count">(137)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="collection" class="sh-radio sh-form-check__input" name="filter_media_type" value="Hoog">
+                        <label class="sh-form-check__label" for="collection">Collectie <span class="sh-facet__values__value__count">(123)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="photo" class="sh-radio sh-form-check__input" name="filter_media_type" value="Foto">
+                        <label class="sh-form-check__label" for="photo">Foto <span class="sh-facet__values__value__count">(84)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="video" class="sh-radio sh-form-check__input" name="filter_media_type" value="Video">
+                        <label class="sh-form-check__label" for="video">Video <span class="sh-facet__values__value__count">(49)</span></label>
+                      </div>
+                    </li>
+                  </ul>
+                  <a class="sh-facet__more_link">Toon meer</a>
+                </div>
+                <div class="sh-facet">
+                  <label class="sh-facet__label">Media type</label>
+                  <ul class="sh-facet__values sh-form-check-list">
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="audio" class="sh-radio sh-form-check__input" name="filter_media_type" value="Audio">
+                        <label class="sh-form-check__label" for="audio">Audio <span class="sh-facet__values__value__count">(274)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="audiofragment" class="sh-radio sh-form-check__input" name="filter_media_type" value="Audiofragment">
+                        <label class="sh-form-check__label" for="audiofragment">Audiofragment <span class="sh-facet__values__value__count">(137)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="collection" class="sh-radio sh-form-check__input" name="filter_media_type" value="Hoog">
+                        <label class="sh-form-check__label" for="collection">Collectie <span class="sh-facet__values__value__count">(123)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="photo" class="sh-radio sh-form-check__input" name="filter_media_type" value="Foto">
+                        <label class="sh-form-check__label" for="photo">Foto <span class="sh-facet__values__value__count">(84)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="video" class="sh-radio sh-form-check__input" name="filter_media_type" value="Video">
+                        <label class="sh-form-check__label" for="video">Video <span class="sh-facet__values__value__count">(49)</span></label>
+                      </div>
+                    </li>
+                  </ul>
+                  <a class="sh-facet__more_link">Toon meer</a>
+                </div>
+                <div class="sh-facet">
+                  <label class="sh-facet__label">Media type</label>
+                  <ul class="sh-facet__values sh-form-check-list">
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="audio" class="sh-radio sh-form-check__input" name="filter_media_type" value="Audio">
+                        <label class="sh-form-check__label" for="audio">Audio <span class="sh-facet__values__value__count">(274)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="audiofragment" class="sh-radio sh-form-check__input" name="filter_media_type" value="Audiofragment">
+                        <label class="sh-form-check__label" for="audiofragment">Audiofragment <span class="sh-facet__values__value__count">(137)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="collection" class="sh-radio sh-form-check__input" name="filter_media_type" value="Hoog">
+                        <label class="sh-form-check__label" for="collection">Collectie <span class="sh-facet__values__value__count">(123)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="photo" class="sh-radio sh-form-check__input" name="filter_media_type" value="Foto">
+                        <label class="sh-form-check__label" for="photo">Foto <span class="sh-facet__values__value__count">(84)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="video" class="sh-radio sh-form-check__input" name="filter_media_type" value="Video">
+                        <label class="sh-form-check__label" for="video">Video <span class="sh-facet__values__value__count">(49)</span></label>
+                      </div>
+                    </li>
+                  </ul>
+                  <a class="sh-facet__more_link">Toon meer</a>
+                </div>
+                <div class="sh-facet">
+                  <label class="sh-facet__label">Media type</label>
+                  <ul class="sh-facet__values sh-form-check-list">
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="audio" class="sh-radio sh-form-check__input" name="filter_media_type" value="Audio">
+                        <label class="sh-form-check__label" for="audio">Audio <span class="sh-facet__values__value__count">(274)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="audiofragment" class="sh-radio sh-form-check__input" name="filter_media_type" value="Audiofragment">
+                        <label class="sh-form-check__label" for="audiofragment">Audiofragment <span class="sh-facet__values__value__count">(137)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="collection" class="sh-radio sh-form-check__input" name="filter_media_type" value="Hoog">
+                        <label class="sh-form-check__label" for="collection">Collectie <span class="sh-facet__values__value__count">(123)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="photo" class="sh-radio sh-form-check__input" name="filter_media_type" value="Foto">
+                        <label class="sh-form-check__label" for="photo">Foto <span class="sh-facet__values__value__count">(84)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="video" class="sh-radio sh-form-check__input" name="filter_media_type" value="Video">
+                        <label class="sh-form-check__label" for="video">Video <span class="sh-facet__values__value__count">(49)</span></label>
+                      </div>
+                    </li>
+                  </ul>
+                  <a class="sh-facet__more_link">Toon meer</a>
+                </div>
+                <div class="sh-facet">
+                  <label class="sh-facet__label">Media type</label>
+                  <ul class="sh-facet__values sh-form-check-list">
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="audio" class="sh-radio sh-form-check__input" name="filter_media_type" value="Audio">
+                        <label class="sh-form-check__label" for="audio">Audio <span class="sh-facet__values__value__count">(274)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="audiofragment" class="sh-radio sh-form-check__input" name="filter_media_type" value="Audiofragment">
+                        <label class="sh-form-check__label" for="audiofragment">Audiofragment <span class="sh-facet__values__value__count">(137)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="collection" class="sh-radio sh-form-check__input" name="filter_media_type" value="Hoog">
+                        <label class="sh-form-check__label" for="collection">Collectie <span class="sh-facet__values__value__count">(123)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="photo" class="sh-radio sh-form-check__input" name="filter_media_type" value="Foto">
+                        <label class="sh-form-check__label" for="photo">Foto <span class="sh-facet__values__value__count">(84)</span></label>
+                      </div>
+                    </li>
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="video" class="sh-radio sh-form-check__input" name="filter_media_type" value="Video">
+                        <label class="sh-form-check__label" for="video">Video <span class="sh-facet__values__value__count">(49)</span></label>
+                      </div>
+                    </li>
+                  </ul>
+                  <a class="sh-facet__more_link">Toon meer</a>
+                </div>
+                <div class="sh-facet">
+                  <label class="sh-facet__label">Seizoenen</label>
+                  <ul class="sh-facet__values sh-form-check-list">
+                    <li class="sh-form-check sh-facet__values__value sh-form-check-list__item ">
+                      <div class="sh-form-check sh-form-check-list__item__check">
+                        <input type="radio" id="zomer" class="sh-radio sh-form-check__input" name="filter_image_quality" value="Zomer" checked>
+                        <label class="sh-form-check__label" for="zomer">Zomer <span class="sh-facet__values__value__count">(6273)</span></label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div id="list" class="list-layout__list">
+          <div class="content-context-layout">
+            <div class="content-context-layout__content">
+              <section class="page-section-layout">
+                <div class="sh-template-stack">
+                  <div class="sh-template-stack__item">
+                    <header class="sh-page-header">
+                      <div class="sh-page-header__head">
+                        <h2 class="sh-page-title">
+                          Concepten
+                        </h2>
+                      </div>
+                    </header>
+                  </div>
+                  <div class="sh-template-stack__item">
+                    <section class="sh-action-bar">
+                      <div class="-sh-condense sh-action-bar__group">
+                        <div class="sh-action-bar__group__item">
+                          <h4 class="sh-clear-margin">10 results</h4>
+                        </div>
+                      </div>
+                      <div class="-sh-condense sh-action-bar__group">
+                        <div class="sh-action-bar__group__item">
+                          <div class="sh-form-multiselect--ghost">
+                            <button type="button" class="sh-icon-button sh-form-group__input sh-form-multiselect__select">
+                    <span class="sh-form-multiselect__select__label">Sort by: Recently added</span>
+                    <svg class="sh-icon--small sh-icon-button__icon--end"><use xlink:href="#sh-icon-angle-down"></use></svg>
+                </button>
+                          </div>
+                        </div>
+                        <div class="sh-action-bar__group__item">
+                          <ul class="sh-action-group--collapsed">
+                            <li class="sh-action-group__item">
+                              <button type="button" class="sh-button sh-action-group__item__action"><span class="sh-visually-hidden">List view</span><svg class="sh-icon--small" aria-hidden="true"><use xlink:href="#sh-icon-th-list"></use></svg></button>
+                            </li>
+                            <li class="sh-action-group__item">
+                              <button type="button" class="sh-button--secondary sh-action-group__item__action"><span class="sh-visually-hidden">Grid view</span><svg class="sh-icon--small" aria-hidden="true"><use xlink:href="#sh-icon-th-large"></use></svg></button>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="sh-template-stack__item">
+                    <div class="sh-card-table-wrapper">
+                      <div class="sh-sticky-header">
+                        <div>
+                          <div class="sh-action-bar-wrapper -sh-dark">
+                            <div class="sh-action-bar -sh-on-dark">
+                              <div class="sh-action-bar__group">
+                                <div class="sh-action-bar__group__item">
+                                  <div class="sh-form-check">
+                                    <input type="checkbox" id="input-field-2" class="sh-checkbox sh-form-check__input" checked="">
+                                    <label for="input-field-2" class="sh-form-check__label -sh-on-dark">2 items geselecteerd</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="sh-action-bar__group">
+                                <div class="sh-action-bar__group__item">
+                                  <div class="sh-action-group -sh-condense">
+                                    <button type="button" class="sh-button--inverted sh-action-group__item">Samen beschrijven</button>
+                                    <button type="button" class="sh-button--inverted sh-action-group__item">Toevoegen aan collectie</button>
+                                    <button type="button" class="sh-button--inverted sh-action-group__item">...</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <table class="sh-card-table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Type</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr class="sh-card-table__row--active">
+                            <th scope="row">Active row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                          <tr tabindex="0" class="-sh-actionable">
+                            <th scope="row">Default row</th>
+                            <td>Status</td>
+                            <td>Type</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="sh-template-stack__item">
+                    <section class="sh-pagination">
+                      <div class="sh-pagination__page-selector">
+                        <select id="pages" class="sh-select">
+                          <option value="10" selected="">10</option>
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                        </select>
+                        <label for="pages" class="sh-pagination__page-selector__label">per page</label>
+                      </div>
+                      <div class="sh-pagination__actions">
+                        <a href="#" class="sh-button--ghost sh-icon-button">
+                          <svg class="sh-icon--small sh-icon-button__icon" aria-hidden="true">
+                            <use xlink:href="#sh-icon-arrow-left"></use>
+                          </svg>
+                          Previous
+                        </a>
+                        <span class="sh-pagination__actions__page-indicator">1-10 of 10</span>
+                        <a href="#" class="sh-button--ghost sh-icon-button">
+                          Next
+                          <svg class="sh-icon--small sh-icon-button__icon--end" aria-hidden="true">
+                            <use xlink:href="#sh-icon-arrow-right"></use>
+                          </svg>
+                        </a>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="content-context-layout__context">
+              <div class="sh-action-bar context-bar --page-section-layout--narrow-spacing">
+                <div class="sh-action-bar__group">
+                  <div class="sh-action-bar__group__item">
+                    <div class="sh-action-group -sh-condense">
+                      <button type="button" class="sh-button sh-action-group__item">Bewerken</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="detail" class="list-layout__detail">
+          <div class="content-context-layout">
+            <div class="content-context-layout__content">
+              <section class="page-section-layout page-section-layout--detail">
+                <div class="sh-sticky-header">
+                  <div class="sh-page-header -sh-has-divider">
+                    <header class="sh-page-header__head--no-context-items">
+                      <h3 class="sh-page-title--section">
+                        Item Title
+                      </h3>
+                    </header>
+                    <div class="sh-page-header__actions">
+                      <div class="sh-action-group -sh-condense">
+                        <button type="button" class="sh-button--ghost sh-icon-button sh-action-group__item">
+                                <svg class="sh-icon--small sh-icon-button__icon" aria-hidden="true"><use xlink:href="#sh-icon-expand"></use></svg>
+                                Show more
+                            </button>
+                        <button class="sh-pure-icon-button sh-action-group__item">
+                                <svg class="sh-icon sh-icon-button__icon" aria-hidden="true"><use xlink:href="#sh-icon-close"></use></svg>
+                            </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <nav class="sh-tab-navigation--small">
+                    <a href="#description" class="sh-tab-navigation__item -sh-is-active" aria-current="location">
+                      Beschrijving
+                    </a>
+                    <a href="#location" class="sh-tab-navigation__item">
+                      Locatie
+                    </a>
+                    <a href="#recording" class="sh-tab-navigation__item">
+                      Opname
+                    </a>
+                    <a href="#permissions" class="sh-tab-navigation__item">
+                      Rechten en privacy
+                    </a>
+                    <a href="#technical" class="sh-tab-navigation__item">
+                      Technische gegevens
+                    </a>
+                  </nav>
+                </div>
+
+                <h4 id="description">
+                  Beschrijving
+                </h4>
+                <p>
+                  Dynamic websites are generated on the fly and use server-side technology to generate webpages. They
+                  typically extract their content from one or more back-end databases: some are database queries across
+                  a relational database to query a catalogue or to summarise numeric information, others may use a
+                  document database such as MongoDB or NoSQL to store larger units of content, such as blog posts or
+                  wiki articles. When dynamic web pages first developed, they were typically coded directly in languages
+                  such as Perl, PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a
+                  server-side page resembled the structure of the completed client-side page and data was inserted into
+                  places defined by tags. This was a quicker means of development than coding in a purely procedural
+                  coding language such as Perl.
+                </p>
+
+                <h4 id="location">
+                  Locatie
+                </h4>
+                <p>
+                  In the design process, dynamic pages are often mocked-up or wireframed using static pages. The
+                  skillset needed to develop dynamic web pages is much broader than for a static pages, involving
+                  server-side and database coding as well as client-side interface design. Even medium-sized dynamic
+                  projects are thus almost always a team effort.
+                </p>
+                <p>
+                  When dynamic web pages first developed, they were typically coded directly in languages such as Perl,
+                  PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a server-side page
+                  resembled the structure of the completed client-side page and data was inserted into places defined by
+                  tags. This was a quicker means of development than coding in a purely procedural coding language such
+                  as Perl. In the design process, dynamic pages are often mocked-up or wireframed using static pages.
+                  The skillset needed to develop dynamic web pages is much broader than for a static pages, involving
+                  server-side and database coding as well as client-side interface design. Even medium-sized dynamic
+                  projects are thus almost always a team effort.
+                </p>
+
+                <h4 id="recording">
+                  Opname
+                </h4>
+                <p>
+                  When dynamic web pages first developed, they were typically coded directly in languages such as Perl,
+                  PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a server-side page
+                  resembled the structure of the completed client-side page and data was inserted into places defined by
+                  tags. This was a quicker means of development than coding in a purely procedural coding language such
+                  as Perl. When dynamic web pages first developed, they were typically coded directly in languages such
+                  as Perl, PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a server-side
+                  page resembled the structure of the completed client-side page and data was inserted into places
+                  defined by tags. This was a quicker means of development than coding in a purely procedural coding
+                  language such as Perl.
+                </p>
+
+                <h4 id="permissions">
+                  Rechten en privacy
+                </h4>
+                <p>
+                  Dynamic websites are generated on the fly and use server-side technology to generate webpages. They
+                  typically extract their content from one or more back-end databases: some are database queries across
+                  a relational database to query a catalogue or to summarise numeric information, others may use a
+                  document database such as MongoDB or NoSQL to store larger units of content, such as blog posts or
+                  wiki articles.
+                </p>
+
+                <h4 id="technical">
+                  Technische gegevens
+                </h4>
+                <p>
+                  In the design process, dynamic pages are often mocked-up or wireframed using static pages. The
+                  skillset needed to develop dynamic web pages is much broader than for a static pages, involving
+                  server-side and database coding as well as client-side interface design. Even medium-sized dynamic
+                  projects are thus almost always a team effort.
+                </p>
+                <p>
+                  When dynamic web pages first developed, they were typically coded directly in languages such as Perl,
+                  PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a server-side page
+                  resembled the structure of the completed client-side page and data was inserted into places defined by
+                  tags. This was a quicker means of development than coding in a purely procedural coding language such
+                  as Perl. When dynamic web pages first developed, they were typically coded directly in languages such
+                  as Perl, PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a server-side
+                  page resembled the structure of the completed client-side page and data was inserted into places
+                  defined by tags. This was a quicker means of development than coding in a purely procedural coding
+                  language such as Perl.
+                </p>
+                <p>
+                  When dynamic web pages first developed, they were typically coded directly in languages such as Perl,
+                  PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a server-side page
+                  resembled the structure of the completed client-side page and data was inserted into places defined by
+                  tags. This was a quicker means of development than coding in a purely procedural coding language such
+                  as Perl. In the design process, dynamic pages are often mocked-up or wireframed using static pages.
+                  The skillset needed to develop dynamic web pages is much broader than for a static pages, involving
+                  server-side and database coding as well as client-side interface design. Even medium-sized dynamic
+                  projects are thus almost always a team effort.
+                </p>
+                <p>
+                  In the design process, dynamic pages are often mocked-up or wireframed using static pages. The
+                  skillset needed to develop dynamic web pages is much broader than for a static pages, involving
+                  server-side and database coding as well as client-side interface design. Even medium-sized dynamic
+                  projects are thus almost always a team effort.
+                </p>
+                <p>
+                  When dynamic web pages first developed, they were typically coded directly in languages such as Perl,
+                  PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a server-side page
+                  resembled the structure of the completed client-side page and data was inserted into places defined by
+                  tags. This was a quicker means of development than coding in a purely procedural coding language such
+                  as Perl. When dynamic web pages first developed, they were typically coded directly in languages such
+                  as Perl, PHP or ASP. Some of these, notably PHP and ASP, used a template approach where a server-side
+                  page resembled the structure of the completed client-side page and data was inserted into places
+                  defined by tags. This was a quicker means of development than coding in a purely procedural coding
+                  language such as Perl.
+                </p>
+              </section>
+            </div>
+            <div class="content-context-layout__context">
+              <div class="sh-action-bar context-bar --page-section-layout--narrow-spacing">
+                <div class="sh-action-bar__group">
+                  <div class="sh-action-bar__group__item">
+                    <div class="sh-action-group -sh-condense">
+                      <button type="button" class="sh-button sh-action-group__item">Bewerken</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul class="controls sh-action-group">
+    <li class="sh-action-group__item">
+      <button onClick="toggleNavigation()" class="sh-button--secondary sh-action-group__item__action">Toggle navigaton</button>
+    </li>
+    <li class="sh-action-group__item">
+      <button onClick="toggleFilters()" class="sh-button--secondary sh-action-group__item__action">Toggle filters</button>
+    </li>
+    <li class="sh-action-group__item">
+      <button onClick="toggleDetail()" class="sh-button--secondary sh-action-group__item__action">Toggle details</button>
+    </li>
+
+  </ul>
+</body>
+
+</html>
