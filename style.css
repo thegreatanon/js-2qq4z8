@@ -71,7 +71,7 @@ body {
 .page-section--wide > *:first-child,
 .page-section--narrow > *:first-child,
 .page-section--vertical > *:first-child,
-.page-section--vertical--start > *:last-child,
+.page-section--vertical--start > *:first-child,
 .page-section--vertical--regular > *:first-child,
 .page-section--vertical--start--regular > *:first-child {
   padding-top: 3rem;
